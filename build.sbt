@@ -1,10 +1,11 @@
 
 
 inThisBuild(Seq(
-  version := "0.2.0-RC4",
+  version := "master-SNAPSHOT",
   organization := "io.github.mariusmuja",
   scalaVersion := crossScalaVersions.value.head,
   crossScalaVersions := Seq("2.12.4", "2.11.11"),
+  resolvers += Resolver.mavenLocal,
   javacOptions in Compile ++= Seq(
     "-source", "1.7",
     "-target", "1.7"
