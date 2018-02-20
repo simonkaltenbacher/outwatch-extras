@@ -1,10 +1,11 @@
 
 
 inThisBuild(Seq(
-  version := "0.2.0-RC5",
+  version := "master-SNAPSHOT",
   organization := "io.github.mariusmuja",
   scalaVersion := crossScalaVersions.value.head,
   crossScalaVersions := Seq("2.12.4", "2.11.11"),
+  resolvers += Resolver.mavenLocal,
   javacOptions in Compile ++= Seq(
     "-source", "1.7",
     "-target", "1.7"
@@ -38,7 +39,7 @@ inThisBuild(Seq(
 )
 
 
-val outwatch = Def.setting("io.github.mariusmuja" %%% "outwatch" % "1.0.0-RC3")
+val outwatch = Def.setting("io.github.outwatch" %%% "outwatch" % "master-SNAPSHOT")
 
 val noPublish = Seq(
   publishArtifact := false,
