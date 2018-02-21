@@ -5,7 +5,9 @@ import demo.styles._
 import monix.execution.Ack.Continue
 import monix.execution.Scheduler.Implicits.global
 import org.scalajs.dom
+import outwatch.Handler
 import outwatch.dom._
+import outwatch.dom.dsl.input
 import outwatch.extras.redux.{StatefulComponent, StatefulEffectsComponent, Store, _}
 import outwatch.extras.router.{BaseUrl, RouterOps}
 import outwatch.extras.styles.Styles
@@ -331,7 +333,7 @@ object Console extends EffectsHandler {
   val effects: Effect => Observable[Result] = {
     case Effect.Log(str) =>
       dom.console.log(s"In console: $str")
-      Observable(Result.Output(str)).delayOnNext(1000.millis)
+      Observable.pure(Result.Output(str)).delayOnNext(1000.millis)
   }
 }
 
